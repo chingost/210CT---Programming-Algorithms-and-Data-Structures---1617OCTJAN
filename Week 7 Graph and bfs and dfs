@@ -1,0 +1,151 @@
+'''Write the pseudocode for an unweighted graph data structure.
+You either use an adjacency matrix or an adjacency list approach.
+Also, write a function to add a new node and a function to add an edge.
+Following that, implement the graph you have designed in the programming
+language of your choice. You must use Object Oriented Programming for this
+task. You may use your own linked list from previous labs,
+the STL LL, or use a simple fixed size array (10 elements would be fine)'''
+
+
+class Vertex:
+    
+    def __init__(self,v):
+        self.node=v #each instance of Vertex has a value in self.node
+        self.neighbours=[]#list of connections
+
+    def addNeighbours(self,n):
+        if n not in self.neighbours:
+            self.neighbours.append(n)
+
+
+class Graph:
+    vertices={}#dictionary to store nodes as keys and values as neighbours
+
+    def addNode(self,v):
+        newNode = Vertex(v) #newNode = instance of the class Vertex
+        self.vertices[v] = newNode
+        retur= newNode
+    
+    def addEdge(self,node1,node2):
+        if node1 in self.vertices and node2 in self.vertices:#check if node is already in graph
+            for key,value in self.vertices.items():
+                if key == node1:
+                    value.addNeighbours(node2)
+                if key == node2:
+                    value.addNeighbours(node1)
+
+    def getNodes(self):
+        print(self.vertices.keys())
+        return None
+
+    def getNeighbours(self):
+        for i in self. vertices.keys():
+            print("Node",i,"neighbours",self.vertices[i].neighbours)
+
+    def __iter__(self):
+        return iter(self.vertices.values())
+
+    '''2. Implement BFS and DFS traversals for the above graph.
+    Save the nodes traversed in sequence to a textfile.'''
+    '''BREADTH-FIRST-SEARCH(G,v)
+           Q←new Queue()
+           visited←[]
+           Q.enqueue(v)
+           WHILE Q is not empty
+             u←q.dequeue()
+             IF u is not in visited
+               visited.append(u)
+             FOR all edges, e, from u
+               Q.enqueue(e.to)
+           RETURN visited'''
+    def bfs(self,start):
+        q=[]
+        visited=[]
+        #enqueue
+        q.insert(0,start)
+        while q != []:
+            #dequeue
+            u=q.pop()
+            print("BFS : queue", q, "visited", visited)
+            if u not in visited:
+                visited.append(u)
+            for n in range(len(self.vertices[u].neighbours)):
+                if self.vertices[u].neighbours[n-1] not in visited:
+                    q.insert(0,self.vertices[u].neighbours[n-1])
+                else:
+                    continue
+            file=open("BFSvisited","w")
+            file.write(str(visited))
+            file.close
+            
+        
+        return visited
+
+        '''DEPTH-FIRST-SEARCH (G, v)
+            S←new Stack()
+            visited←[]
+            S.push(v)
+            WHILE S is not empty
+                u←S.pop()
+                IF u is not in visited
+                    visited.append(u)
+                FOR all edges, e, from u, S.push(e.to)
+            RETURN visited''' 
+
+    def dfs(self,start):
+        s=[]
+        visited=[]
+        #push
+        s.append(start)
+        while s != []:
+            x=0
+            u=s.pop()
+            if u not in visited:
+                visited.append(u)
+            print("DFS : queue", s , "visited", visited)
+            for n in range(len(self.vertices[u].neighbours)):
+                if self.vertices[u].neighbours[n-1] not in visited:
+                    s.append(self.vertices[u].neighbours[n-1])
+                else:
+                    continue
+            file=open("DFSvisited","w")
+            file.write(str(visited))
+            file.close
+        return visited
+    
+        
+        
+        
+    
+                
+
+unweightedGraph=Graph()
+
+unweightedGraph.addNode(0)
+unweightedGraph.addNode(1)
+unweightedGraph.addNode(2)
+unweightedGraph.addNode(3)
+unweightedGraph.addNode(4)
+unweightedGraph.addNode(5)
+unweightedGraph.addNode(6)
+unweightedGraph.addNode(7)
+unweightedGraph.addNode(8)
+unweightedGraph.addNode(9)
+
+unweightedGraph.addEdge(1,2)
+unweightedGraph.addEdge(2,3)
+unweightedGraph.addEdge(0,4)
+unweightedGraph.addEdge(7,8)
+unweightedGraph.addEdge(4,5)
+unweightedGraph.addEdge(1,3)
+unweightedGraph.addEdge(2,5)
+unweightedGraph.addEdge(3,6)
+unweightedGraph.addEdge(0,9)
+unweightedGraph.addEdge(0,8)
+
+
+unweightedGraph.getNodes()
+unweightedGraph.getNeighbours()
+unweightedGraph.bfs(0)
+unweightedGraph.dfs(0)
+
