@@ -1,12 +1,12 @@
 Bin_SEARCH(array, upperlimit, lowerlimit)
-	Start=0
-	End=len(array-1)
+	Start<-0
+	End<-len(array-1)
 	While start < end
-		Midpoint=midpoint of start and end
+		Midpoint<-midpoint of start and end
 		If lowerlimit and upperlimit  <  midpoint
-			Start = midpoint +1
+			Start <- midpoint +1
 		Elif lowerlimit and upperlimit  >  midpoint
-			End=midpoint
+			End<-midpoint
 		Else:
 			Return true
 O(logn)
