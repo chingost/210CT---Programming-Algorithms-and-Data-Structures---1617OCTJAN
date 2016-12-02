@@ -1,0 +1,10 @@
+def tZero(n):
+    exponent=1
+    output=0
+    while 5**exponent < n:
+        output+=(n//(5**exponent))#if 5**exponent is less than n floor divide by 5 and add to output
+        exponent+=1 #incerease exponent by 1
+    return output # return output which should have total trailing zeroes
+
+print(tZero(1000))
+
