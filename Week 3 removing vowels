@@ -1,0 +1,24 @@
+'''Write a recursive function (pseudocode and code) that removes all vocals from a
+given string s. Input: "beautiful" Output: "btfl".
+'''
+
+word=("owOrd")
+pos=(len(word)-1)#pos to index position in word
+
+def removeVowels(word,pos):
+    vowels=["a","e","i","o","u"]
+    if word[pos] == word[0]:#once at the start of the word check if its a vowel and return the result
+        if word[pos].lower() in vowels:
+            word=word.replace(word[0],"")
+            return word
+        else:
+            return word
+    elif word[pos].lower() in vowels:#if the current position in vowels replace
+        word=word.replace(word[pos],"")
+        return removeVowels(word,pos-1)#recursive call for the rest of the word
+    else:
+        return removeVowels(word,pos-1)
+
+    
+
+print(removeVowels(word,pos))
