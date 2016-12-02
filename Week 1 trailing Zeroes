@@ -1,0 +1,22 @@
+import random
+
+def randShuffle(x):
+    num2=[]#list for new numbers:
+    for x in range(len(num)): 
+        n=random.randrange(len(num)) # number from range of positions in list
+        num2.append(num[n]) # append num in randomly generated position
+        del num[n] #remove number from num list to avoid getting value whcih is out of rang
+    return num2    
+
+try:
+    r= int(input("how many numbers do you want to enter :"))#how many numbers to be entered
+    num = [] #list to store numbers to be shuffled
+    for i in range(r):
+        n= int(input("Enter number :"))
+        num.append(n)
+
+    print(randShuffle(num))
+
+except ValueError:
+    print("intergers only")
+
