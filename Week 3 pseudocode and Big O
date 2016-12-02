@@ -1,10 +1,10 @@
 Reverse pseudocode
 REVERSE_STRING(S)
-	S=S.split()
+	S<-S.split()
 	Return S.reverse()
 O(2)
 Prime number pseudocode
-I = 2
+I <- 2
 IS_PRIME(n)
 	If n = 2
 		Return True
@@ -15,7 +15,7 @@ IS_PRIME(n)
 		IS_PRIME(n)
 Vowels pseudocode
 REMOVE_VOWELS(word, pos)
-	Vowels=[a,e,I,o,u]
+	Vowels<-[a,e,I,o,u]
 	If word[pos]=word[0]
 		If word[0] in vowels
 			Word.remove()
