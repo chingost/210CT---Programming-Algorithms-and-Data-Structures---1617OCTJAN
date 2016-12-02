@@ -1,10 +1,14 @@
-def tZero(n):
-    exponent=1
-    output=0
-    while 5**exponent < n:
-        output+=(n//(5**exponent))#if 5**exponent is less than n floor divide by 5 and add to output
-        exponent+=1 #incerease exponent by 1
-    return output # return output which should have total trailing zeroes
 
-print(tZero(1000))
 
+def isPrime(n,i=2): #n= number to be tested i= number for division starting at 2
+    if n==2: #2 is the only evn prime number
+        return True
+    elif n%i == 0:# if there is no remainder then it is fully divisible and not a prime
+        return False
+    elif i > n/2: #once i is greater than half of the number it is no longer divisable
+        return True 
+    else:
+        return isPrime(n,i+1) #recursive call if none of the conditions met
+    
+
+print(isPrime(21,2))
