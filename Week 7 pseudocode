@@ -1,15 +1,15 @@
 Class Vertex
-	Label=0
-	Edges = [ ]
+	Label<-0
+	Edges <- [ ]
 	ADDEDGE(Vertex,n)
 		If n not in edges
 			Vertices.vertex.edges.append(n1)
 			Vertices.vertex.edges.append(n2)
 Class Graph
-	Vertices = { }
+	Vertices <- { }
 	AddNode(Graph,n)
 		If n not in vertices
-			Vertices[n]=n
+			Vertices[n] <- n
 	AddEdge(Graph,n1,n2)
 		If n1 and n2 in vertices
 			Vertices.vertex(ADDEDGE(n1))
