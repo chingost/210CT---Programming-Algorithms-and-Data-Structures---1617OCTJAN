@@ -1,0 +1,26 @@
+"""Adapt the binary search algorithm so that instead of
+outputting whether a specific value was found, it outputs
+whether a value within a specific interval was found."""
+	
+def binarySearch(array,upperLimit,lowerLimit):#input is array and range limits
+    start = 0 #used to point to start of the section of the list being searched
+    end = len(array)-1#points to end of th section og the list being searched
+    result = False #result = false unless range is found
+
+    while start < end:
+        midPoint = int (start +(end-start)//2)#find midpoint
+        if lowerLimit > array[midPoint] and upperLimit > array[midPoint]:
+            start = midPoint + 1
+            #if both limits are greate than the midpoint search upper half
+        elif lowerLimit < array[midPoint] and upperLimit < array[midPoint]:
+            end = midPoint
+            #if limits are less than midpoint search lower half
+        else:
+            #if they fall either side of midpoint there are values within the range
+            result=True
+            return result
+    return result
+
+array= [1,3,4,5,6,7,9,11,23,45]
+print(binarySearch(array,11,7))
+print(binarySearch(array,99,56))
