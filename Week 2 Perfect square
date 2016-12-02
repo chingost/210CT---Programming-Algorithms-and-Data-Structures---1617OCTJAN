@@ -1,14 +1,10 @@
+posInt=int(input("Enter positive interger :"))
 
+def pSqr(n):
+    #going the power of n/0.5 is finding the square root
+    while (n % n**0.5) != 0:
+        n-=1
+    return n
 
-def isPrime(n,i=2): #n= number to be tested i= number for division starting at 2
-    if n==2: #2 is the only evn prime number
-        return True
-    elif n%i == 0:# if there is no remainder then it is fully divisible and not a prime
-        return False
-    elif i > n/2: #once i is greater than half of the number it is no longer divisable
-        return True 
-    else:
-        return isPrime(n,i+1) #recursive call if none of the conditions met
-    
+print(pSqr(posInt))
 
-print(isPrime(21,2))
