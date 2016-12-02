@@ -1,3 +1,4 @@
+#perfect square function
 posInt=int(input("Enter positive interger :"))
 
 def pSqr(n):
