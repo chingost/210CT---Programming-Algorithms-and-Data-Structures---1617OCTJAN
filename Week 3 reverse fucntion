@@ -1,0 +1,11 @@
+#reversing a string
+
+sen = ("This is Awesome")
+
+def reverseString(s):
+    s=s.split()#split string to get 3 different items
+    return s[::-1]#use step(-1) in slice to reverse order
+
+print(reverseString(sen))
+
+
