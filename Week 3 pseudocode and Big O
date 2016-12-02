@@ -23,6 +23,6 @@ REMOVE_VOWELS(word, pos)
 		Word[pos].remove()
 		REMOVE_VOWELS(word,pos-1)
 Else
-REMOVE_VOWELS(word,pos-1)
+	REMOVE_VOWELS(word,pos-1)
 	
 O(n)
