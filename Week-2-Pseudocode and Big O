@@ -1,0 +1,91 @@
+Perfect square pseudocode
+PSqe(n)
+While sqr(n) is not int
+		n-1
+return n
+Week 1 big O
+Random shuffle O(n)
+Trailing zeroes: O(n)
+Matrices pseudocode
+MatrixB =[ [ 1, 2] , [ 2, 4] ]
+MatrixC=[ [ 1, 6] , [ 2, 5] ]
+ADD_MATRICES (M1, M2)
+Addition_Matrix=[]
+	For row in M1
+		Addition_Matrix.append ([])
+		For item in M2
+			M1 [row] [item] + M2[row] [item]
+			addition_Matrix[-1].append(N)
+	return Addition_Matrix
+
+
+
+
+
+
+
+SUB_MATRICES (M1, M2)
+	New_Matrix = []
+	For row in M1
+		sub_Matrix.append ([])
+		For item in M2
+			N = M1 [row] [item] - M2[row] [item]
+			sub_Matrix[-1].append(N)
+	return sub_Matrix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MUL_MATRICES (M1, M2)
+	SizeM1=[len(rows),len(column)]
+	SizeM2=[len(rows),len(column)]
+	If M1[row]==m2[column]
+		SizeM1.remove(column)
+		SizeM2.remove(row)
+		NewMatrix=[ ]
+		For row in M1
+			NewMatrix.append ([ ])
+			For item in row
+				N=M1[row][item] * M2[column][item]
+				NewMatrix[-1].append(n)
+elif M2[column]=M2[row]
+		SizeM1.remove(row)
+		SizeM2.remove(column)
+		NewMatrix=[ ]
+		For column in M1
+		NewMatrix.append ([ ])
+			For item in column
+				N=M1[column][item] * M2[row][item]
+				NewMatrix[-1].append(n)
+	Else
+		Return “cant multiply”
+Return New_Matrix
+
+MUL_MATRIX(M,N)
+	NewMatrix=[]
+	For row in M
+		NewMatrix.append([])
+		For item in row
+			N*M[row][item]
+			NewMatrix[-1].append(item)
+
+A = B*C-2*(B+C)
+X= MUL_MATRICES (matrixB, matrixC) 
+Y=ADD_Matrices(matrixB, matrixC)
+Z=MUL_Matrix(Y,2)
+Ans = SUB_Matrices( X-Z)
+Runtime 
+O(n**2)
