@@ -1,0 +1,20 @@
+Random Shuffle
+a.	 Does your algorithm have defined inputs and outputs? 
+Yes it will only take integers and produces there is a try/except in case any other type if given
+b.	Can you guarantee that it terminates? 
+Yes, for loop working in each range once the specified iterations are run it returns result
+c.	Is it specified in a clear and concise manner? 
+yes
+d.	Does your algorithm produce the correct result for all instances?
+Yes, works for all positive and negative integers tested
+
+Zeroes
+a.	 Does your algorithm have defined inputs and outputs? 
+    yes 
+b.	Can you guarantee that it terminates? 
+    yes, there is a base case which is evaluated at the start of each iteration
+c.	Is it specified in a clear and concise manner? 
+    yes
+d.	Does your algorithm produce the correct result for all instances?
+    yes, for all instances of float and int tested as well as positive and negative values
+
